@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,5 +8,309 @@
 <body>
     <h1>Welcome to VLABench</h1>
     <p>This is the official website of VLABench!</p>
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks">
+  <meta name="keywords" content="Robotic Manipulation, GPT-4V(ision)">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title style="letter-spacing: 0.1em; font-variant: small-caps;">CoPa</title>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-R2ZLMKHR2E"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-R2ZLMKHR2E');
+</script>
+
+  <script>
+    function updateInteractive() {
+      var task = document.getElementById("interactive-menu").value;
+
+      console.log("interactive", task)
+
+      var video = document.getElementById("video-base");
+      video.src = "media/primitive_task/" + 
+                  task + "/"
+                  "base.mp4"
+      video.play();
+
+      var video = document.getElementById("video-spatial");
+      video.src = "media/primitive_task/" + 
+                  task + "/"
+                  "spatial.mp4"
+      video.play();
+
+      var video = document.getElementById("video-commonsense");
+      video.src = "media/primitive_task/" + 
+                  task + "/"
+                  "commonsense.mp4"
+      video.play();
+
+      var video = document.getElementById("video-semantic");
+      video.src = "media/primitive_task/" + 
+                  task + "/"
+                  "semantic.mp4"
+      video.play();
+
+    //   var html = document.getElementById("interactive-html-1");
+    //   html.src = "media/interactive/" + 
+    //               task + 
+    //               ".html"
+
+    }
+
+
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body onload="updateInteractive();">
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">CoPa: General Robotic Manipulation through <br> Spatial Constraints of Parts with Foundational Model</h1>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              Shiduo Zhang<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Zhe Xu<sup>1</sup>,
+            </span>
+            <span class="author-block">
+              Peiju Liu<sup>1, *</sup>,
+            </span>
+            <span class="author-block">
+              Xiaopeng Yu<sup>1, *</sup>,
+            </span>
+            <span class="author-block">
+              Yuan Li<sup>1</sup>
+            </span>
+            <span class="author-block">
+              Qinghui Gao<sup>1</sup>
+            </span>
+            <span class="author-block">
+              Zhaoye Fei<sup>1</sup>
+            </span>
+            <span class="author-block">
+              Zhangyue Yin<sup>1</sup>
+            </span>
+            <span class="author-block">
+              Zuxuan Wu<sup>1</sup>
+            </span>
+            <span class="author-block">
+              Yugang Jiang<sup>1</sup>
+              </span>
+              <span class="author-block">
+                Xipeng Qiu<sup>1</sup>
+              </span>
+          </div>
+
+          <div class="is-size-6 publication-authors">
+            <span class="author-block"><sup>1</sup>School of Computer Science and Technology, Fudan University. </span>
+            <span class="author-block"><sup>*</sup>Equal Contribution. </span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a target="_blank" href="https://arxiv.org"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper(See u next month!)</span>
+                </a>
+              </span>
+
+            <!-- Arxiv Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://arxiv.org"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fas fa-file"></i>
+                </span>
+                <span>Arxiv(See u next month!)</span>
+              </a>
+            </span>
+
+            <!-- Video Link. -->
+            <!-- <span class="link-block">
+              <a target="_blank" href="https://example.com"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-youtube"></i>
+                </span>
+                <span>Video</span>
+              </a>
+            </span> -->
+
+            <!-- Code Link. -->
+            <span class="link-block">
+              <a target="_blank" href="https://github.com"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                    <i class="fab fa-github"></i>
+                </span>
+                <span>Code(Release together with aboves)</span>
+                </a>
+            </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Tasks gallery -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+        
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/button-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/drawer-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+           <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+             <source src="media/task-videos/hammer-mark-4x_crf20.0.mp4"
+                     type="video/mp4">
+           </video>
+         </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/flowers-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/glasses-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/eraser-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/scissors-mark-2x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/spoon-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+       <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="media/task-videos/sweep-mark-4x_crf20.0.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Abstract -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            General-purposed embodied agents are designed to understand the users' natural instructions or intentions and act precisely to complete universal tasks. Recently, methods based on foundation models especially Vision-Language-Action models (VLAs) have shown a substantial potential to solve language-conditioned manipulation (LCM) tasks well. However, existing benchmarks do not adequately meet the needs of VLAs and relative algorithms. To better define such general-purpose tasks in the context of LLMs and advance the research in VLAs, we present VLABench, an open-source benchmark for evaluating universal LCM task learning. VLABench provides 100 carefully designed categories of tasks, with strong randomization in each category of task and a total of 2000+ objects. VLABench stands out from previous benchmarks in four key aspects: 1) tasks requiring world knowledge and common sense transfer, 2) natural language instructions with implicit human intentions rather than templates, 3) long-horizon tasks demanding multi-step reasoning, and 4) evaluation of both action policies and language model capabilities. The benchmark assesses multiple competencies including understanding of mesh\&texture, spatial relationship, semantic instruction, physical laws, knowledge transfer and reasoning, etc. To support the downstream finetuning, we provide high-quality training data collected via an automated framework incorporating heuristic skills and prior information. The experimental results indicate that both the current state-of-the-art pretrained VLAs and the workflow based on VLMs face challenges in our tasks. 
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+  </div>
+
+</section>
+
+<!-- Display -->
+<section class="section">
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+    <!-- Animation. -->
+    <div class="rows is-centered ">
+      <div class="row is-full-width">
+
+        <!-- Interactive Visualization -->
+        <div class="container has-text-centered">
+          <h2 class="title is-3" style="margin-bottom: 1em;">Example of Primitive Tasks</h2>
+        </div>
+        <div class="columns is-vcentered">
+          <div class="column has-text-centered">
+
+            Visualization for   
+            <div class="select is-small is-rounded">     
+              <select id="interactive-menu" onchange="updateInteractive()">
+              <option value="select_fruit" selected="selected">"Select Fruit Seriess"</option>
+              <option value="select_toy">"Select Toy Series"</option>
+              <option value="select_tube">"Select Chemistry Tube Series"</option>
+              <!-- <option value=""> -->
+              </select>
+            </div>
+          </div>
+
+        </div>
+        </div>
+
+        </div>
+    </div>
+  </div>
+</section>
+         
 </body>
 </html>
