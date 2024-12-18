@@ -1,0 +1,1 @@
+The cards are dealt, and it's your turn. Analyze and pick the hand with the highest probability of winning.
