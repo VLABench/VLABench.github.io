@@ -247,73 +247,6 @@
   </div>
 </section>
 
-
-<!-- Tasks gallery -->
-<!-- <section class="hero is-light is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-        
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-            <source src="media/task-videos/button-mark-4x_crf20.0.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-            <source src="media/task-videos/drawer-mark-4x_crf20.0.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-           <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-             <source src="media/task-videos/hammer-mark-4x_crf20.0.mp4"
-                     type="video/mp4">
-           </video>
-         </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-            <source src="media/task-videos/flowers-mark-4x_crf20.0.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-            <source src="media/task-videos/glasses-mark-4x_crf20.0.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-            <source src="media/task-videos/eraser-mark-4x_crf20.0.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-            <source src="media/task-videos/scissors-mark-2x_crf20.0.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item">
-          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-            <source src="media/task-videos/spoon-mark-4x_crf20.0.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-       <div class="item">
-          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
-            <source src="media/task-videos/sweep-mark-4x_crf20.0.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-
 <!-- Abstract -->
 <section class="section">
   <div class="container is-max-desktop">
@@ -334,18 +267,79 @@
 
 </section>
 
-<!-- Display -->
 <section class="section">
   <div class="container is-max-widescreen">
+    <!-- Section Title -->
+    <div class="has-text-centered" style="margin-bottom: 2em;">
+      <h1 class="title is-3">VLABench</h1>
+      <h2 class="title is-4">New Definition for LCM Tasks Suitable for Foundation Models</h2>
+      <h2 class="subtitle is-5">——What Abilities Should True a VLA Have?</h2>
+    </div>
 
+    <!-- Content with Image and Text -->
+    <div class="columns is-vcentered">
+      <!-- Left Column: Image Placeholder
+      <div class="column is-half has-text-centered">
+        <div class="box" style="height: 300px; background-color: #f5f5f5; border: 1px dashed #ccc;">
+          <p class="is-size-5 has-text-grey">Image Placeholder</p>
+        </div>
+      </div> -->
+
+      <!-- Right Column: Text Placeholder -->
+     
+        <div class="content">
+          <p class="is-size-5">
+            From the perspective of “intelligence”, it is divided into six capability dimensions:
+          </p>
+          <ul>
+            <li><span style="font-weight: bolder;">Mesh & Texture Understanding.</span>
+              It should be able to recognize irregular and uniquely shaped meshes as well as diversified textures with rich semantic information. This involves basic open-vocabulary object recognition, OCR capabilities and etc.
+            </li>
+            <li><span style="font-weight: bolder;">Spatial Understanding.</span>
+              It should possess basic spatial perception abilities, enabling accurate judgment of the <span style="font-weight: bolder;">relative positions</span> of objects in an image,<span style="font-weight: bolder;">spatial constraints</span> between different objects, and even direct <span style="font-weight: bolder;">distance estimation</span>.
+            </li>
+            <li><span style="font-weight: bolder;">Common Sense & World Knowledge Transfer.</span>
+              It should acquire world knowledge and common sense from large-scale pretraining and apply such priors to corresponding tasks. For example, associating visual information with world knowledge to align it with user requirements.
+            </li>
+            <li><span style="font-weight: bolder;">Semantic Instruction Understanding.</span>
+              It should retain strong language comprehension abilities, enabling it to extract user needs from natural interactions or understand the implicit goals of a task, and then execute dynamic action sequences. Instead of template instructions like “pick A and then place it to B”.
+            </li>
+            <li><span style="font-weight: bolder;">Physical Laws Understanding.</span>
+              It should understand the principles of the physical world, such as friction, gravity, acceleration, and even fundamental physical concepts like the lever principle.
+            </li>
+            <li><span style="font-weight: bolder;">Long-Horizon Reasoning.</span> 
+              Reasoning here primarily refers to the ability to plan for long-horizon, multi-step tasks, where logical correlations between multiple action steps are required. Broader reasoning encompasses several of the aforementioned abilities, such as semantic inference, the incorporation of world knowledge, and alignment between vision and task objectives. However, in this context, we focus solely on the former.
+            </li>
+          </ul>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- Primitive Display -->
+<section class="section">
+  <div class="container is-max-widescreen">
+    <div class="container has-text-centered">
+      <h1 class="title is-4" style="margin-bottom: 1em;">100 Tasks in VLABench</h1>
+      <h2 class="subtitle is-5" style="margin-bottom: 1em;">——What Tasks Should a True VLA Do?</h2>
+    </div>
+    <div>
+      <p>
+        VLABench divides tasks into two categories: Primitive and Composite.
+      </p>
+      <ul>
+        <li><span style="font-weight: bolder;">Primitive Tasks:</span> 60 tasks that require only one or two dimensions abilities and few skill combinations.</li>
+        <li><span style="font-weight: bolder;">Composite Tasks:</span> 40 tasks that require multi-step reasoning and long-horizon planning, involving more skills and abilities.</li>
+      </ul>
+      <scan style="line-height: 1.5; font-style: italic;">The 100 task categories are just a starting point. E.g. New tasks can be created by arbitrarily combining the above-mentioned abilities and skills.</scan>
+    </div>
     <div class="rows">
     <!-- Animation. -->
     <div class="rows is-centered ">
       <div class="row is-full-width">
-
         <!-- Interactive Visualization -->
         <div class="container has-text-centered">
-          <h2 class="title is-3" style="margin-bottom: 1em;">Example of Primitive Tasks</h2>
+          <h2 class="title is-5" style="margin-bottom: 1em;margin-top: 1em;">Example of 60 Primitive Tasks</h2>
         </div>
 
         <div class="columns is-vcentered">
@@ -357,7 +351,11 @@
               <option value="select_fruit" selected="selected">"Select Fruit Seriess"</option>
               <option value="select_toy">"Select Toy Series"</option>
               <option value="select_chemistry_tube">"Select Chemistry Tube Series"</option>
-              <option value="add_condiment">"Add Condiment"</option>
+              <option value="add_condiment">"Add Condiment Series"</option>
+              <option value="select_book">"Select Book Series"</option>
+              <option value="select_painting">"Select Painting Series"</option>
+              <option value="select_drink">"Select Drink Series"</option>
+              <option value="insert_flower">"Insert Flower Series"</option>
               <!-- <option value=""> -->
               </select>
             </div>
@@ -365,39 +363,39 @@
 
         </div>
         <div class="columns is-vcentered">
-            <div class="column is-one-fifths">
+            <div class="column is-one-fourth">
               <div class="instruction-panel ">
               <p id="base-text">Pick the banana into the plate.</p>
               </div>
-              <video id="video-base" width="100%" height="100%" controls autoplay loop muted>
+              <video id="video-base" class="primitive-video" width="100%" height="100%" controls autoplay loop muted>
                 <source src="./media/primitive_task/select_fruit/base.mp4" type="video/mp4">
               </video>
               <!-- ability and title here -->
               <p class="text-bottom-title">Mesh & Texture</p>
             </div>
-            <div class="column is-one-fifths">
+            <div class="column is-one-fourth">
                 <div class="instruction-panel">
                 <p id="spatial-text">Pick the pear outside into the plate.</p>
                 </div>
-                <video id="video-spatial" width="100%" height="100%" controls autoplay loop muted>
+                <video id="video-spatial" class="primitive-video" width="100%" height="100%" controls autoplay loop muted>
                     <source src="./media/primitive_task/select_fruit/spatial.mp4" type="video/mp4">
                 </video>
                 <p class="text-bottom-title">Spatial</p>
             </div>
-            <div class="column is-one-fifths">
+            <div class="column is-one-fourth">
                 <div class="instruction-panel ">
                   <p id="commonsense-text">Pick the fruit with Heat-clearing character into the plate.</p>
                 </div>
-                <video id="video-commonsense" width="100%" height="100%" controls autoplay loop muted>
+                <video id="video-commonsense" class="primitive-video" width="100%" height="100%" controls autoplay loop muted>
                     <source src="./media/primitive_task/select_fruit/commonsense.mp4" type="video/mp4">
                 </video>
                 <p class="text-bottom-title">Common Sense & World knowledge</p>
             </div>
-            <div class="column is-one-fifths">
+            <div class="column is-one-fourth">
                 <div class="instruction-panel ">
                   <p id="semantic-text">One apple one day, doctor keey away! I want one please.</p>
                 </div>
-                <video id="video-semantic" width="100%" height="100%" controls autoplay loop muted>
+                <video id="video-semantic" class="primitive-video" width="100%" height="100%" controls autoplay loop muted>
                     <source src="./media/primitive_task/select_fruit/semantic.mp4" type="video/mp4">
                 </video>
                 <p class="text-bottom-title">Semantic</p>
@@ -407,6 +405,158 @@
         </div>
 
         </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tasks gallery -->
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="container has-text-centered">
+        <h2 class="title is-5" style="margin-bottom: 1em;">Example of Composite Tasks</h2>
+      </div>
+      <div id="results-carousel" class="carousel results-carousel">
+        <!-- <div class="columns is-multiline is-centered"> -->
+        <div class="item">
+          <div class="instruction-panel ">
+            <p id="base-text">Instruction: Please rearrange the book by their publish year, early to late from left to right!</p>
+          </div>
+          <video class="galary-video" id="book_rearrange" poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/book_rearrange/book_rearrange.mp4"
+                    type="video/mp4">
+          </video>
+          <p class="text-bottom-task-name">Book Rearrange</p>
+        </div>
+        <div class="item">
+          <video id="cluster_billiards" poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/cluster_billiards/cluster_billiards.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+           <video id="cluster_book" poster="" autoplay muted loop height="100%" controlsList="nodownload">
+             <source src="./media/composite_task/cluster_book/cluster_book.mp4"
+                     type="video/mp4">
+           </video>
+         </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/cluster_drink/cluster_drink.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/cluster_toy/cluster_toy.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/cook_dishes/cook_dishes.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/find_unseen_object/find_unseen_object.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/get_coffee/get_coffee_with_sugar.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+       <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/hammer_nail_and_hang_picture/demo_2_success_True.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/hammer_nail_and_hang_picture/demo_2_success_True.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/heat_food/heat_food.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/math_game/math_game.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/set_dining_table/set_dining_table.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/set_study_table/set_study_table.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/texas_holdem/texas_holdem.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/texas_holdem/texas_holdem_explore.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item">
+          <video poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/use_seesaw/use_seesaw.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="container has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Evaluation</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="container has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Experiment Result</h2>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="hero-body">
+    <div class="container is-max-widescreen">
+      <div class="container has-text-centered">
+        <h2 class="title is-3" style="margin-bottom: 1em;">Key Insight</h2>
+      </div>
     </div>
   </div>
 </section>
