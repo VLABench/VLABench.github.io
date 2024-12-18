@@ -23,36 +23,91 @@
       var task = document.getElementById("interactive-menu").value;
 
       console.log("interactive", task)
-
-      var video = document.getElementById("video-base");
-      video.src = "media/primitive_task/" + 
-                  task + "/"
+      // Update Video
+      var video_base = document.getElementById("video-base");
+      video_base.src = "./media/primitive_task/" + 
+                  task + "/" +
                   "base.mp4"
-      video.play();
+      video_base.play();
 
-      var video = document.getElementById("video-spatial");
-      video.src = "media/primitive_task/" + 
-                  task + "/"
+      var video_spatial = document.getElementById("video-spatial");
+      video_spatial.src = "./media/primitive_task/" + 
+                  task + "/" +
                   "spatial.mp4"
-      video.play();
+      video_spatial.play();
 
-      var video = document.getElementById("video-commonsense");
-      video.src = "media/primitive_task/" + 
-                  task + "/"
+      var video_commonsense = document.getElementById("video-commonsense");
+      video_commonsense.src = "./media/primitive_task/" + 
+                  task + "/" +
                   "commonsense.mp4"
-      video.play();
+      video_commonsense.play();
 
-      var video = document.getElementById("video-semantic");
-      video.src = "media/primitive_task/" + 
-                  task + "/"
+      var video_semantic = document.getElementById("video-semantic");
+      video_semantic.src = "./media/primitive_task/" + 
+                  task + "/" +
                   "semantic.mp4"
-      video.play();
+      video_semantic.play();
 
-    //   var html = document.getElementById("interactive-html-1");
-    //   html.src = "media/interactive/" + 
-    //               task + 
-    //               ".html"
+    // Update Text Description
+    fetch("./media/primitive_task/" + task + "/" + "base.txt")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to load base text for task: " + task);
+      }
+      return response.text();
+    })
+    .then(text => {
+      document.getElementById("base-text").innerText = "Instruction: " + text;
+    })
+    .catch(error => {
+      console.error(error);
+      document.getElementById("base-text").innerText = "Error loading description.";
+    });
 
+    fetch("./media/primitive_task/" + task + "/" + "spatial.txt")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to load spatial text for task: " + task);
+      }
+      return response.text();
+    })
+    .then(text => {
+      document.getElementById("spatial-text").innerText = "Instruction: " + text;
+    })
+    .catch(error => {
+      console.error(error);
+      document.getElementById("spatial-text").innerText = "Error loading description.";
+    });
+
+    fetch("./media/primitive_task/" + task + "/" + "commonsense.txt")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to load commonsense text for task: " + task);
+      }
+      return response.text();
+    })
+    .then(text => {
+      document.getElementById("commonsense-text").innerText = "Instruction: " + text;
+    })
+    .catch(error => {
+      console.error(error);
+      document.getElementById("commonsense-text").innerText = "Error loading description.";
+    });
+
+    fetch("./media/primitive_task/" + task + "/" + "semantic.txt")
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Failed to load semantic text for task: " + task);
+      }
+      return response.text();
+    })
+    .then(text => {
+      document.getElementById("semantic-text").innerText = "Instruction: " + text;
+    })
+    .catch(error => {
+      console.error(error);
+      document.getElementById("semantic-text").innerText = "Error loading description.";
+    });
     }
 
 
@@ -136,7 +191,7 @@
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>Paper(See u next month!)</span>
+                  <span>Paper</span>
                 </a>
               </span>
 
@@ -147,18 +202,30 @@
                 <span class="icon">
                     <i class="fas fa-file"></i>
                 </span>
-                <span>Arxiv(Coming Soon)</span>
+                <span>Arxiv</span>
               </a>
             </span>
-
+            <!-- <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" width="50"> -->
             <!-- Video Link. -->
-            <span class="link-block">
+            <!-- <span class="link-block">
               <a target="_blank" href="https://github.com"
                  class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                     <i class="fab fa-youtube"></i>
                 </span>
                 <span>Video(On the way)</span>
+              </a>
+            </span> -->
+
+            <!-- Hugging face Link -->
+            <span class="link-block">
+              <a target="_blank" href="https://github.com"
+                 class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" 
+                  alt="Hugging Face" width="24" style="vertical-align: middle;">
+                </span>
+                <span>Demo Dataset</span>
               </a>
             </span>
 
@@ -169,7 +236,7 @@
                 <span class="icon">
                     <i class="fab fa-github"></i>
                 </span>
-                <span>Code(Coming Soon)</span>
+                <span>Code</span>
                 </a>
             </span>
             </div>
@@ -256,7 +323,7 @@
         <h2 class="title is-3" style="margin-bottom: 1em;">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            General-purposed embodied agents are designed to understand the users' natural instructions or intentions and act precisely to complete universal tasks. Recently, methods based on foundation models especially Vision-Language-Action models (VLAs) have shown a substantial potential to solve language-conditioned manipulation (LCM) tasks well. However, existing benchmarks do not adequately meet the needs of VLAs and relative algorithms. To better define such general-purpose tasks in the context of LLMs and advance the research in VLAs, we present VLABench, an open-source benchmark for evaluating universal LCM task learning. VLABench provides 100 carefully designed categories of tasks, with strong randomization in each category of task and a total of 2000+ objects. VLABench stands out from previous benchmarks in four key aspects: 1) tasks requiring world knowledge and common sense transfer, 2) natural language instructions with implicit human intentions rather than templates, 3) long-horizon tasks demanding multi-step reasoning, and 4) evaluation of both action policies and language model capabilities. The benchmark assesses multiple competencies including understanding of mesh\&texture, spatial relationship, semantic instruction, physical laws, knowledge transfer and reasoning, etc. To support the downstream finetuning, we provide high-quality training data collected via an automated framework incorporating heuristic skills and prior information. The experimental results indicate that both the current state-of-the-art pretrained VLAs and the workflow based on VLMs face challenges in our tasks. 
+            General-purposed embodied agents are designed to understand the users' natural instructions or intentions and act precisely to complete universal tasks. Recently, methods based on foundation models especially Vision-Language-Action models (VLAs) have shown a substantial potential to solve language-conditioned manipulation (LCM) tasks well. However, existing benchmarks do not adequately meet the needs of VLAs and relative algorithms. To better define such general-purpose tasks in the context of LLMs and advance the research in VLAs, we present VLABench, an open-source benchmark for evaluating universal LCM task learning. VLABench provides 100 carefully designed categories of tasks, with strong randomization in each category of task and a total of 2000+ objects. VLABench stands out from previous benchmarks in four key aspects: 1) tasks requiring world knowledge and common sense transfer, 2) natural language instructions with implicit human intentions rather than templates, 3) long-horizon tasks demanding multi-step reasoning, and 4) evaluation of both action policies and language model capabilities. The benchmark assesses multiple competencies including understanding of mesh&texture, spatial relationship, semantic instruction, physical laws, knowledge transfer and reasoning, etc. To support the downstream finetuning, we provide high-quality training data collected via an automated framework incorporating heuristic skills and prior information. The experimental results indicate that both the current state-of-the-art pretrained VLAs and the workflow based on VLMs face challenges in our tasks. 
           </p>
         </div>
       </div>
@@ -280,6 +347,7 @@
         <div class="container has-text-centered">
           <h2 class="title is-3" style="margin-bottom: 1em;">Example of Primitive Tasks</h2>
         </div>
+
         <div class="columns is-vcentered">
           <div class="column has-text-centered">
 
@@ -288,7 +356,7 @@
               <select id="interactive-menu" onchange="updateInteractive()">
               <option value="select_fruit" selected="selected">"Select Fruit Seriess"</option>
               <option value="select_toy">"Select Toy Series"</option>
-              <option value="select_tube">"Select Chemistry Tube Series"</option>
+              <option value="select_chemistry_tube">"Select Chemistry Tube Series"</option>
               <option value="add_condiment">"Add Condiment"</option>
               <!-- <option value=""> -->
               </select>
@@ -298,24 +366,41 @@
         </div>
         <div class="columns is-vcentered">
             <div class="column is-one-fifths">
+              <div class="instruction-panel ">
+              <p id="base-text">Pick the banana into the plate.</p>
+              </div>
               <video id="video-base" width="100%" height="100%" controls autoplay loop muted>
-                <source src="media/primitive_task/select_fruit/base.mp4" type="video/mp4">
+                <source src="./media/primitive_task/select_fruit/base.mp4" type="video/mp4">
               </video>
+              <!-- ability and title here -->
+              <p class="text-bottom-title">Mesh & Texture</p>
             </div>
             <div class="column is-one-fifths">
+                <div class="instruction-panel">
+                <p id="spatial-text">Pick the pear outside into the plate.</p>
+                </div>
                 <video id="video-spatial" width="100%" height="100%" controls autoplay loop muted>
-                    <source src="media/primitive_task/select_fruit/spatial.mp4" type="video/mp4">
+                    <source src="./media/primitive_task/select_fruit/spatial.mp4" type="video/mp4">
                 </video>
+                <p class="text-bottom-title">Spatial</p>
             </div>
             <div class="column is-one-fifths">
+                <div class="instruction-panel ">
+                  <p id="commonsense-text">Pick the fruit with Heat-clearing character into the plate.</p>
+                </div>
                 <video id="video-commonsense" width="100%" height="100%" controls autoplay loop muted>
-                    <source src="media/primitive_task/select_fruit/commonsense.mp4" type="video/mp4">
+                    <source src="./media/primitive_task/select_fruit/commonsense.mp4" type="video/mp4">
                 </video>
+                <p class="text-bottom-title">Common Sense & World knowledge</p>
             </div>
             <div class="column is-one-fifths">
+                <div class="instruction-panel ">
+                  <p id="semantic-text">One apple one day, doctor keey away! I want one please.</p>
+                </div>
                 <video id="video-semantic" width="100%" height="100%" controls autoplay loop muted>
-                    <source src="media/primitive_task/select_fruit/semantic.mp4" type="video/mp4">
+                    <source src="./media/primitive_task/select_fruit/semantic.mp4" type="video/mp4">
                 </video>
+                <p class="text-bottom-title">Semantic</p>
             </div>
           </div>
 
