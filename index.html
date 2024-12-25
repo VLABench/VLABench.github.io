@@ -137,7 +137,7 @@
     <div class="container is-fullhd">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks</h1>
+          <h1 class="title is-1 publication-title">VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks(Preview Version)</h1>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
@@ -219,7 +219,7 @@
 
             <!-- Hugging face Link -->
             <span class="link-block">
-              <a target="_blank" href="https://github.com"
+              <a target="_blank" href="https://huggingface.co/datasets/VLABench/eval_vlm_v0"
                  class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                   <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" 
@@ -246,8 +246,6 @@
     </div>
   </div>
 </section>
-<!-- overview figure -->
- <img src="./media/task_static/main_page.gif" alt="gif">
 
 <!-- Abstract -->
 <section class="section">
@@ -268,6 +266,9 @@
   </div>
 
 </section>
+
+<!-- overview figure -->
+<img src="./media/task_static/main_page.gif" alt="gif">
 
 <section class="section">
   <div class="container is-max-widescreen">
@@ -350,7 +351,7 @@
             Visualization for   
             <div class="select is-small is-rounded">     
               <select id="interactive-menu" onchange="updateInteractive()">
-              <option value="select_fruit" selected="selected">"Select Fruit Seriess"</option>
+              <option value="select_fruit" selected="selected">"Select Fruit Series"</option>
               <option value="select_toy">"Select Toy Series"</option>
               <option value="select_chemistry_tube">"Select Chemistry Tube Series"</option>
               <option value="add_condiment">"Add Condiment Series"</option>
@@ -449,6 +450,16 @@
                      type="video/mp4">
            </video>
            <p class="text-bottom-task-name">Cluser Book</p>
+         </div>
+         <div class="item">
+          <div class="instruction-panel">
+            <p>Instruction: Hi! I’m trying to conduct a chemistry experiment. Could you help me prepare Pb(OH)₂ ？</p>
+          </div>
+          <video id="take_chemistry_experiment" poster="" autoplay muted loop height="100%" controlsList="nodownload">
+            <source src="./media/composite_task/take_chemistry_experiment/take_chemistry_experiment.mp4"
+                    type="video/mp4">
+          </video>
+          <p class="text-bottom-task-name">Take Chemistry Experiment</p>
          </div>
         <div class="item">
           <div class="instruction-panel">
