@@ -231,7 +231,7 @@
 
             <!-- Code Link. -->
             <span class="link-block">
-              <a target="_blank" href="https://github.com"
+              <a target="_blank" href="https://github.com/OpenMOSS/VLABench"
                  class="external-link button is-normal is-rounded is-dark">
                 <span class="icon">
                     <i class="fab fa-github"></i>
@@ -261,13 +261,18 @@
         </div>
       </div>
     </div>
-    <!--/ Abstract. -->
-    <!-- overview figure -->
-    <img src="./media/task_static/main_page.gif" alt="gif">
   </div>
 
 </section>
 
+<!-- overview figure -->
+<div class="hero-body">
+  <div class="container is-max-widescreen">
+    <div class="container has-text-centered">
+      <img src="./media/task_static/main_page.gif" alt="gif">
+    </div>
+  </div>
+</div>
 
 
 <section class="section">
@@ -599,28 +604,118 @@
 </section>
 
 <!-- Evaluation Description -->
-<section>
+<section class="section">
   <div class="hero-body">
     <div class="container is-max-widescreen">
       <div class="container has-text-centered">
         <h2 class="title is-3" style="margin-bottom: 1em;">Evaluation</h2>
-        <img src="./media/task_static/eval.gif" alt="Example GIF"/>
       </div>
+      <p>The evaluation method of VLABench includes both interactive and non-interactive approaches.
+      <br><strong>Interactive:</strong> mainly for evaluation of VLA policies and workflows utilizing VLM/LLM. The policies should step in the environment under specific tasks to compute the progress score and statics success rate.
+      <br><strong>Non-interactive:</strong> mainly for evalution of VLMs. The VLMs should generate the action sequence in the format of our skill sequence based on the instruction and the segmented scene images. The generated action sequence will be computed a overall score by matching the DAG between generated and groundtruth. The framework is as the figure below.
+      </p>
+      <img src="./media/task_static/eval.gif" alt="Example GIF"/>
     </div>
   </div>
 </section>
 
+<!-- Leaderboard -->
 <section>
   <div class="hero-body">
     <div class="container is-max-widescreen">
       <div class="container has-text-centered">
         <h2 class="title is-3" style="margin-bottom: 1em;">Experiment Result</h2>
+        <h3 class="subtitle is-5" style="margin-bottom: 1em;">——Latest Leaderboad Comming Soon</h3>
+      </div>
+      <p style="margin-bottom: 1em;">
+        VLABench provides standard evaluations for three types of methods: Vision-Language-Action Models, workflows utilizing VLM/LLM, and Vision-Language Models.
+        In preview version, We present the <b>early experimental results to facilitate further analysis</b>. The complete leaderboard will be released soon. 
+      </p>
+      
+      
+      <!-- vla result -->
+      <div class="container has-text-centered">
+        <h3 class="title is-4" style="margin-bottom: 1em">Leaderboard of policies(mainly VLAs)</h3>
+      </div>
+      <p>
+        The experimental design related to VLA revolves around the following questions:
+        <ul>
+          <li><strong>Q1:</strong> Do pre-trained VLAs exhibit stronger general abilities with unseen categories of objects?</li>
+          <li><strong>Q2:</strong> Can pre-trained VLAs transfer their general knowledge and behavioral abilities to similar but unseen tasks?</li>
+          <li><strong>Q3:</strong> Can pre-trained VLAs understand natural user interactions and implicit goal requirements?</li>
+          <li><strong>Q4:</strong> Do pre-trained VLAs have the potential to transfer their world knowledge to related tasks?</li>
+          <li><strong>Q5:</strong> Can existing VLA architectures accurately support the completion of long-horizon tasks?</li>
+        </ul>
+      </p>
+      
+      <img src="./media/task_static/Figure_VLA_result.png" alt="static image">
+      <p>The current VLAs have not demonstrated the expected capabilities, particularly in terms of the intelligence derived from pretraining, as they struggle with tasks involving generalization, skill transfer, and long-horizon planning.
+        Drawing an analogy to the development trajectory of large language models, the present state of <span style="color: red;font-weight: bold;">VLAs is still far from reaching a level comparable to GPT-2</span>.
+      </p>
+      <br>
+      <!-- workflow result -->
+      <div class="container has-text-centered">
+        <h3 class="title is-4" style="margin-bottom: 1em">Leaderboard of workflows</h3>
+      </div>
+      <div class="container">
+        <div class="columns is-vcentered">
+          <!-- Image Column -->
+          <div class="column is-half">
+            <img class="image" src="./media/task_static/Figure_Agent_result.png" alt="Sample Image">
+          </div>
+      
+          <!-- Text Column -->
+          <div class="column is-half">
+            <p>In fact, these so-called zero-shot manipulation workflows are designed for specific types of tasks. When the task scenarios or capability requirements exceed their original design, these methods are less effective.
+              <br><br>
+              <ul>
+                <li><strong>Bottleneck Effect in Submodules</strong>
+                  Workflow’s hierarchical and modular design results in a bottleneck effect. 
+                  This is particularly evident in the actuator module. E.g. Errors in predicting grasp poses, as well as behaviors that do not satisfy spatial constraints.
+                  As well as perception module. E.g. The inability to recognize complex objects leads to failures in the perception stage.
+                </li>
+                <li><strong>Error in Module Connections</strong>
+                  The requirement for specific input-output formats between modules leads to information loss or mismatch. Especially the unexpected behavior of the LLM or VLM. 
+                  E.g. The language model did not output the expected rotation matrix, or generated incorrect code that resulted in execution failure.
+                </li>
+              </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- vlm result -->
+      <div class="container has-text-centered">
+        <h3 class="title is-4" style="margin-bottom: 1em;">Leaderboard of VLMs</h3>
+      </div>
+      <div class="container">
+        <div class="columns is-vcentered">    
+          <!-- Text Column -->
+          <div class="column is-half">
+            <p>Without considering errors caused by action execution, we evaluated the capabilities of current leading language model series in embodied scenarios using action sequence matching to calculate scores. It was found that these state-of-the-art multimodal models <span style="color: red;font-weight: bold;">do not perform as well as expected in embodied scenarios</span>.
+            <br><br>
+              <ul>
+              <li><strong>Overall Failing Grades</strong>
+                Compared to VLAs, these models retain more high-level intelligence. Since they are evaluated primarily from the perception and decision-making aspects, their evaluation scores are relatively higher. Qwen-VL-7B and GPT-4v demonstrated relatively decent performance, but none of VLMs achieved a passing score.
+              </li>
+              <li><strong>Pour Planning Ability</strong>
+                All models performed poorly in task reasoning and planning. Only 4o achieved a relatively balanced score in reasoning.
+              </li>
+            </ul>
+            <br>Please refer to our paper for more detailed analysis.
+            </p>
+          </div>
+          <!-- Image Column -->
+          <div class="column is-half">
+            <img class="image" src="./media/task_static/Figure_VLM_result.png" alt="Sample Image">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section>
+<!-- <section>
   <div class="hero-body">
     <div class="container is-max-widescreen">
       <div class="container has-text-centered">
@@ -628,7 +723,7 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
 
 <section class="section" id="BibTeX">
   <div class="container is-max-widescreen content">
