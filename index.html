@@ -129,6 +129,7 @@
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
   <script src="./static/js/index.js"></script>
+  <script src="./static//js/leaderboard.js" type="module"></script>
 </head>
 <body onload="updateInteractive();">
 
@@ -137,11 +138,11 @@
     <div class="container is-fullhd">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks(Preview Version)</h1>
+          <h1 class="title is-1 publication-title">VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks</h1>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              Shiduo Zhang<sup>1</sup>,
+              <a class="author-name" href="https://shiduo-zhang.github.io/">Shiduo Zhang</a><sup>1</sup>,
             </span>
             <span class="author-block">
               Zhe Xu<sup>1</sup>,
@@ -172,7 +173,7 @@
               Yu-Gang Jiang<sup>1</sup>,
               </span>
               <span class="author-block">
-                Xipeng Qiu<sup>1</sup>
+                <a class="author-name" href="https://xpqiu.github.io/en.html">Xipeng Qiu</a><sup>1</sup>
               </span>
           </div>
 
@@ -236,7 +237,7 @@
                 <span class="icon">
                     <i class="fab fa-github"></i>
                 </span>
-                <span>Code (Preview Version)</span>
+                <span>Code</span>
                 </a>
             </span>
             
@@ -664,6 +665,16 @@
         Drawing an analogy to the development trajectory of large language models, the present state of <span style="color: red;font-weight: bold;">VLAs is still far from reaching a level comparable to GPT-2</span>.
       </p>
       <br>
+      <!-- <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="benchmark-table-content" role="tabpanel"
+            aria-labelledby="benchmark-table-content">
+            <div id="behavior-benchmark-main-table"></div>
+        </div>
+        <div class="tab-pane fade" id="eurus-code-table-content" role="tabpanel"
+            aria-labelledby="eurus-code-table-content">
+            <div id="virtualhome-benchmark-main-table"></div>
+        </div>
+    </div> -->
       <!-- workflow result -->
       <div class="container has-text-centered">
         <h3 class="title is-4" style="margin-bottom: 1em">Leaderboard of workflows</h3>
@@ -740,7 +751,7 @@
   <div class="container is-max-widescreen content">
     <h2 class="title">BibTeX</h2>
     <pre><code>
-      @misc{zhang2024vlabenchlargescalebenchmarklanguageconditioned,
+      @misc{zhang2024vlabench,
         title={VLABench: A Large-Scale Benchmark for Language-Conditioned Robotics Manipulation with Long-Horizon Reasoning Tasks}, 
         author={Shiduo Zhang and Zhe Xu and Peiju Liu and Xiaopeng Yu and Yuan Li and Qinghui Gao and Zhaoye Fei and Zhangyue Yin and Zuxuan Wu and Yu-Gang Jiang and Xipeng Qiu},
         year={2024},
